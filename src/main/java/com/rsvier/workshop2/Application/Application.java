@@ -19,13 +19,13 @@ public class Application {
   
         Account account = new Account();
 
-        account.setNaam("GenericDAO works wtf");
+        account.setNaam("Wrong test xD");
         
         DAOAccount daoAccount = new DAOAccount();
         
         daoAccount.create(account);
         
-        account.setIdAccount(4L);
+        account.setIdAccount(6L);
         daoAccount.delete(account);
         
     }

@@ -66,6 +66,7 @@ public abstract class GenericDAO<Entity, EntityID extends Serializable>
         try {
             startOperation();
             session.update(entityRef);
+            tx.commit();
         } catch(HibernateException e) {
             handleException(e);
         } finally {
@@ -78,6 +79,7 @@ public abstract class GenericDAO<Entity, EntityID extends Serializable>
         try {
             startOperation();
             session.delete(entityRef);
+            tx.commit();
         } catch(HibernateException e) {
             handleException(e);
         } finally {
