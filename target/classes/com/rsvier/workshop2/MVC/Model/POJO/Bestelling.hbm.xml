@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 24, 2016 9:35:54 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.rsvier.workshop2.MVC.Model.POJO.Bestelling" table="bestelling" catalog="workshop2" optimistic-lock="version">
+        <id name="idBestelling" type="java.lang.Long">
+            <column name="idBestelling" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="klant" class="com.rsvier.workshop2.MVC.Model.POJO.Klant" fetch="select">
+            <column name="klant_idKlant" />
+        </many-to-one>
+        <property name="bestelNummer" type="string">
+            <column name="bestelNummer" length="45" />
+        </property>
+        <property name="bestelDatum" type="timestamp">
+            <column name="bestelDatum" length="19" />
+        </property>
+        <set name="bestellingHasArtikels" table="bestelling_has_artikel" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="bestelling_idBestelling" />
+            </key>
+            <one-to-many class="com.rsvier.workshop2.MVC.Model.POJO.BestellingHasArtikel" />
+        </set>
+    </class>
+</hibernate-mapping>
