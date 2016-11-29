@@ -40,10 +40,10 @@ public class DAOAccount extends GenericDAO {
         //super.save(account);
         //session.getTransaction().commit();
         //session.close(); 
-
+/*
     public Account read(Long id) {
         super.read(id);
     }
-
+*/
  }
 

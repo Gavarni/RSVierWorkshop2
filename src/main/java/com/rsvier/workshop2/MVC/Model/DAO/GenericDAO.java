@@ -43,7 +43,7 @@ public abstract class GenericDAO<Entity, EntityID extends Serializable>
             HibernateManager.closeSession(session);
         }
     }
-    
+    /*
     @Override
     public Entity read(EntityID id){
         try {
@@ -59,7 +59,7 @@ public abstract class GenericDAO<Entity, EntityID extends Serializable>
         }
             
         return entityRef;
-    }
+    }*/
 
     @Override
     public void update(Entity entityRef){

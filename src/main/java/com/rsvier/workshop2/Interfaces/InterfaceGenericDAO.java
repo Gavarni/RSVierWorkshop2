@@ -17,7 +17,7 @@ public interface InterfaceGenericDAO<Entity, EntityID extends Serializable> {
     
     public void create(Entity entityRef);
     //waarom kan ik niet gewoon de id als enige parameter meegeven
-    public Entity read(EntityID id);
+   // public Entity read(EntityID id);
     public void update(Entity entityRef);
     public void delete(Entity entityRef);
     
