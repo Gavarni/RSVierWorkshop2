@@ -3,19 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.rsvier.workshop2.Interfaces;
+package com.rsvier.workshop2.Services;
 
-import java.io.Serializable;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author Gavarni
- * @param <T>
- * @param <K>
  */
-public interface InterfaceGenericDAO<T, K extends Serializable> {
+@Service
+public class ServiceAccount {
     
-    public void create(T t);
-    //public T read(K id);
+
     
 }

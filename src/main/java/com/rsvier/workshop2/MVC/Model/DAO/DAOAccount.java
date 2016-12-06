@@ -19,7 +19,9 @@ public class DAOAccount extends GenericDAO {
         super();
     }
     
-
+    public void create(Account account){
+        super.create(account);
+    }
     
    
         
