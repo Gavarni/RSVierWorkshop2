@@ -96,7 +96,7 @@ public class Account  implements java.io.Serializable {
         this.createDate = createDate;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="account")
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="account")
     public Set getKlants() {
         return this.klants;
     }
