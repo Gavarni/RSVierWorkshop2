@@ -14,14 +14,15 @@ and open the template in the editor.
             <h2>Accounts</h2>
             <div th:unless="${#lists.isEmpty(accounts)}">
                 <dl th:each="account : ${accounts}" >
-                    <span th:text="${account.idAccount}">ID<span>
-                    <span th:text="${account.naam}">Naam<span>
-                    <span th:text="${account.createDate}">Create Date<span>
+                    <span th:text="${account.idAccount}">ID</span>
+                    <span th:text="${account.naam}">Naam</span>
+                    <span th:text="${account.createDate}">Create Date</span>
                 </dl>
             </div>
         </div>
         
         <div th:if="${#lists.isEmpty(accounts)}">
             <p>No Accounts to display</p>
+           </div>
     </body>
 </html>

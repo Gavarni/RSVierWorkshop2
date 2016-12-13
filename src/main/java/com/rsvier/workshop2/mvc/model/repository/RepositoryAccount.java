@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @author Gavarni
  */
+
+//extends CrudRepository<T, ? super Serializable>
 @Repository
 @Transactional
 public interface RepositoryAccount extends JpaRepository<Account, Long>{

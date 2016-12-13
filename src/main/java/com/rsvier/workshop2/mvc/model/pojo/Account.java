@@ -18,13 +18,21 @@ import javax.persistence.TemporalType;
 @Table(name="account",catalog="workshop2")
 public class Account  implements java.io.Serializable {
 
-
-     private Long idAccount;
-     private String naam;
-     private String wachtwoord;
-     private String accountStatus;
-     private Date createDate;
-     private Set<Klant> klants = new HashSet<>(0);
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name="poep", unique=true, nullable=false)
+    private Long idAccount;
+    @Column(name="naam", length=45)
+    private String naam;
+    @Column(name="wachtwoord", length=45)
+    private String wachtwoord;
+    @Column(name="accountStatus", length=45)
+    private String accountStatus;
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name="createDate", length=19)
+    private Date createDate;
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="account")
+    private Set<Klant> klants = new HashSet<>(0);
 
     public Account() {
     }
@@ -37,9 +45,6 @@ public class Account  implements java.io.Serializable {
        this.klants = klants;
     }
    
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name="idAccount", unique=true, nullable=false)
     public Long getIdAccount() {
         return this.idAccount;
     }
@@ -49,7 +54,6 @@ public class Account  implements java.io.Serializable {
     }
 
     
-    @Column(name="naam", length=45)
     public String getNaam() {
         return this.naam;
     }
@@ -59,7 +63,6 @@ public class Account  implements java.io.Serializable {
     }
 
     
-    @Column(name="wachtwoord", length=45)
     public String getWachtwoord() {
         return this.wachtwoord;
     }
@@ -69,7 +72,7 @@ public class Account  implements java.io.Serializable {
     }
 
     
-    @Column(name="accountStatus", length=45)
+    
     public String getAccountStatus() {
         return this.accountStatus;
     }
@@ -78,8 +81,6 @@ public class Account  implements java.io.Serializable {
         this.accountStatus = accountStatus;
     }
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="createDate", length=19)
     public Date getCreateDate() {
         return this.createDate;
     }
@@ -88,7 +89,7 @@ public class Account  implements java.io.Serializable {
         this.createDate = createDate;
     }
 
-    @OneToMany(fetch=FetchType.LAZY, mappedBy="account")
+   
     public Set<Klant> getKlants() {
         return this.klants;
     }

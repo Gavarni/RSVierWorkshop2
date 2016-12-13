@@ -67,5 +67,4 @@ public class ServiceAccount implements InterfaceGenericService {
         repositoryAccount.delete(account);
     }
     
-    
 }
