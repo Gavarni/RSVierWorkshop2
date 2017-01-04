@@ -20,7 +20,7 @@ public class Account  implements java.io.Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name="poep", unique=true, nullable=false)
+    @Column(name="idAccount", unique=true, nullable=false)
     private Long idAccount;
     @Column(name="naam", length=45)
     private String naam;

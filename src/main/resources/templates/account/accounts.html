@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        
+    </head>
+    <body>
+        <div>
+            <h2>Accounts</h2>
+            <div th:unless="${#lists.isEmpty(accounts)}">
+                <dl th:each="account : ${accounts}" >
+                    <span th:text="${account.idAccount}">ID</span>
+                    <span th:text="${account.naam}">Naam</span>
+                    <span th:text="${account.createDate}">Create Date</span>
+                </dl>
+            </div>
+        </div>
+        
+        <div th:if="${#lists.isEmpty(accounts)}">
+            <p>No Accounts to display</p>
+           </div>
+        
+        
+        <div class="container">
+            <div th:if="${not #lists.isEmpty(accounts)}">
+                <h2>Product List</h2>
+                <table class="table table-striped">
+                   <tr>
+                       <th>Id</th>
+                       <th>Naam</th>
+                       <th>View</th>
+                       <th>Edit</th>
+                       <th>Delete</th>
+                    </tr>
+                    <tr th:each="account : ${accounts}">
+                        <td th:text="${account.idAccount}"><a href="/account/${account.idAccount}">Id</a></td>
+                        <td th:text="${account.naam}">descirption</td>
+                        <td><a th:href="${'/account/' + account.idAccount}">View</a></td>
+                        <td><a th:href="${'/account/edit/' + account.idAccount}">Edit</a></td>
+                        <td><a th:href="${'/account/delete/' + account.idAccount}">Delete</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
