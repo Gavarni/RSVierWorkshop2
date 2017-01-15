@@ -20,16 +20,16 @@ public class Account  implements java.io.Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name="idAccount", unique=true, nullable=false)
+    @Column(name="id_account", unique=true, nullable=false)
     private Long idAccount;
-    @Column(name="naam", length=45)
+    @Column(name="naam", length=45, nullable = false, unique = true)
     private String naam;
     @Column(name="wachtwoord", length=45)
     private String wachtwoord;
-    @Column(name="accountStatus", length=45)
+    @Column(name="account_status", length=45)
     private String accountStatus;
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="createDate", length=19)
+    @Column(name="create_date", length=19)
     private Date createDate;
     @OneToMany(fetch=FetchType.LAZY, mappedBy="account")
     private Set<Klant> klants = new HashSet<>(0);
@@ -100,7 +100,7 @@ public class Account  implements java.io.Serializable {
 
     @Override
     public String toString() {
-        return "Account{" + "idAccount=" + idAccount + ", naam=" + naam + ", wachtwoord=" + wachtwoord + ", accountStatus=" + accountStatus + ", createDate=" + createDate + ", klants=" + klants + '}';
+        return "Account{" + "id_account=" + idAccount + ", naam=" + naam + ", wachtwoord=" + wachtwoord + ", account_status=" + accountStatus + ", create_date=" + createDate + ", klanten=" + klants + '}';
     }
 
 }

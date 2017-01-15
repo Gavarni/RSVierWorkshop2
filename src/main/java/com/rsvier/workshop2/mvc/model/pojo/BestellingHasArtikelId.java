@@ -27,7 +27,7 @@ public class BestellingHasArtikelId  implements java.io.Serializable {
    
 
 
-    @Column(name="bestelling_idBestelling")
+    @Column(name="bestelling_id_bestelling")
     public Long getBestellingIdBestelling() {
         return this.bestellingIdBestelling;
     }
@@ -37,7 +37,7 @@ public class BestellingHasArtikelId  implements java.io.Serializable {
     }
 
 
-    @Column(name="artikel_idArtikel")
+    @Column(name="artikel_id_artikel")
     public Long getArtikelIdArtikel() {
         return this.artikelIdArtikel;
     }

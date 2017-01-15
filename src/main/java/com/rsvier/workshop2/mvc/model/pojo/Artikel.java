@@ -45,7 +45,7 @@ public class Artikel  implements java.io.Serializable {
     }
    
     @Id @GeneratedValue(strategy=IDENTITY)
-    @Column(name="idArtikel", unique=true, nullable=false)
+    @Column(name="id_artikel", unique=true, nullable=false)
     public Long getIdArtikel() {
         return this.idArtikel;
     }
@@ -55,7 +55,7 @@ public class Artikel  implements java.io.Serializable {
     }
 
     
-    @Column(name="artikelNummer")
+    @Column(name="artikelnummer")
     public Long getArtikelNummer() {
         return this.artikelNummer;
     }

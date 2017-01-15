@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>KaaS Page</title>
+        <th:block th:include="meta-data/head :: head"></th:block>
+    </head>
+    <body>
+        
+        <div th:include="layout/header :: .container-header"></div>
+        
+        <div class="container-main">
+		
+			<div class="container-kaas">
+				
+				<div class="container-kaas-profile">
+				<div class="container">
+					
+					<div class="row">
+						
+						<div class="col-lg-3 col-lg-offset-3">
+							<img class="img-responsive" src="img/avatar/02.jpg"/>
+						</div>
+						<div class="col-lg-3">
+							<h4><b>Gavarni M. Winter</b></h4>
+							"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+							nisi ut aliquip ex ea commodo consequat."
+						</div>
+						
+					</div>
+				</div>
+				</div>
+				
+				<div class="container-kaas-profile">
+				<div class="container">
+					
+					<div class="row">
+						
+						<div class="col-lg-3 col-lg-offset-3">
+							<img class="img-responsive" src="img/avatar/01.jpg"/>
+
+						</div>
+						<div class="col-lg-3">
+							<h4><b>Johan Schoemaker</b></h4>
+							"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+							nisi ut aliquip ex ea commodo consequat."
+						</div>
+						
+					</div>
+				</div>			
+				</div>
+				
+			</div>
+			
+		</div>
+        
+        <div th:include="layout/footer :: .container-footer"></div>
+        
+    </body>
+</html>

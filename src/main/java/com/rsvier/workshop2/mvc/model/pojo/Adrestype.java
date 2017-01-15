@@ -38,7 +38,7 @@ public class Adrestype  implements java.io.Serializable {
      @Id @GeneratedValue(strategy=IDENTITY)
 
     
-    @Column(name="idAdresType", unique=true, nullable=false)
+    @Column(name="id_adrestype", unique=true, nullable=false)
     public Long getIdAdresType() {
         return this.idAdresType;
     }

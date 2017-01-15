@@ -25,7 +25,7 @@ public class KlantHasAdresId  implements java.io.Serializable {
    
 
 
-    @Column(name="klant_idKlant")
+    @Column(name="klant_id_klant")
     public Long getKlantIdKlant() {
         return this.klantIdKlant;
     }
@@ -35,7 +35,7 @@ public class KlantHasAdresId  implements java.io.Serializable {
     }
 
 
-    @Column(name="adres_idAdres")
+    @Column(name="adres_id_adres")
     public Long getAdresIdAdres() {
         return this.adresIdAdres;
     }

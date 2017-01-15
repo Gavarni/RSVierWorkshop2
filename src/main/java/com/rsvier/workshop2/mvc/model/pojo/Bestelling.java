@@ -47,7 +47,7 @@ public class Bestelling  implements java.io.Serializable {
      @Id @GeneratedValue(strategy=IDENTITY)
 
     
-    @Column(name="idBestelling", unique=true, nullable=false)
+    @Column(name="id_bestelling", unique=true, nullable=false)
     public Long getIdBestelling() {
         return this.idBestelling;
     }
@@ -57,7 +57,7 @@ public class Bestelling  implements java.io.Serializable {
     }
 
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="klant_idKlant")
+    @JoinColumn(name="klant_id_klant")
     public Klant getKlant() {
         return this.klant;
     }
@@ -67,7 +67,7 @@ public class Bestelling  implements java.io.Serializable {
     }
 
     
-    @Column(name="bestelNummer", length=45)
+    @Column(name="bestel_nummer", length=45)
     public String getBestelNummer() {
         return this.bestelNummer;
     }
@@ -77,7 +77,7 @@ public class Bestelling  implements java.io.Serializable {
     }
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="bestelDatum", length=19)
+    @Column(name="bestel_datum", length=19)
     public Date getBestelDatum() {
         return this.bestelDatum;
     }

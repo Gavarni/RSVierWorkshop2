@@ -43,8 +43,8 @@ public class KlantHasAdres  implements java.io.Serializable {
 
     
     @AttributeOverrides( {
-        @AttributeOverride(name="klantIdKlant", column=@Column(name="klant_idKlant") ), 
-        @AttributeOverride(name="adresIdAdres", column=@Column(name="adres_idAdres") ) } )
+        @AttributeOverride(name="klantIdKlant", column=@Column(name="klant_id_klant") ), 
+        @AttributeOverride(name="adresIdAdres", column=@Column(name="adres_id_adres") ) } )
     public KlantHasAdresId getId() {
         return this.id;
     }
@@ -54,7 +54,7 @@ public class KlantHasAdres  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="adres_idAdres", insertable=false, updatable=false)
+    @JoinColumn(name="adres_id_adres", insertable=false, updatable=false)
     public Adres getAdres() {
         return this.adres;
     }
@@ -64,7 +64,7 @@ public class KlantHasAdres  implements java.io.Serializable {
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="klant_idKlant", insertable=false, updatable=false)
+    @JoinColumn(name="klant_id_klant", insertable=false, updatable=false)
     public Klant getKlant() {
         return this.klant;
     }

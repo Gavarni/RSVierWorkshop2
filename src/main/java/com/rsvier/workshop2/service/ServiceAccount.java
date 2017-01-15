@@ -28,6 +28,11 @@ public class ServiceAccount implements InterfaceGenericService {
     @Autowired
     private RepositoryAccount repositoryAccount;
 
+    @Autowired
+    public ServiceAccount(RepositoryAccount repositoryAccount){
+        this.repositoryAccount = repositoryAccount;
+    }
+    
     
     @Transactional(propagation=Propagation.REQUIRED, readOnly = true)
     public List<Account> getAll() {
@@ -56,15 +61,15 @@ public class ServiceAccount implements InterfaceGenericService {
     public Account update(Account account) {
         Account foundAccount = get(account.getIdAccount());
         if(foundAccount == null){
-        return null;
+            return null;
         }
         Account updatedAccount = repositoryAccount.save(account);
         return updatedAccount;
     }
     
     
-    public void remove(Account account) {
-        repositoryAccount.delete(account);
+    public void remove(Long id) {
+        repositoryAccount.delete(id);;
     }
     
 }

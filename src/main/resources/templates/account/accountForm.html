@@ -11,13 +11,13 @@
             <h2>Account Details</h2>
             <div>
                 <!-- What is de @ Account in the action deel van de form-->
-                <form class="form-horizontal" data-th-object="${account}" data-th-action="@{/account}" method="post">
-                    <input type="hidden" data-th-field="*{idAccount}"/>
+                <form class="form-horizontal" th:object="${account}" th:action="@{/account}" method="post">
+                    <input type="hidden" th:field="*{idAccount}"/>
                    
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Name:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" data-th-field="*{naam}"/>
+                            <input type="text" class="form-control" th:field="*{naam}"/>
                         </div>
                     </div>
                     

@@ -15,6 +15,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class ControllerHome {
+    
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String home() {
+        return "index";
+    }
+    
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String home1() {
+        return "index";
+    }
+    
     /*
     @RequestMapping("/")
     public String home(){
@@ -27,7 +38,10 @@ public class ControllerHome {
         return "app/login";
     }
     */
+    
+
         
+        /*
         @RequestMapping(value = "/welcome", method = RequestMethod.GET)
         public String welcome() {
             return "welcome";
@@ -37,7 +51,7 @@ public class ControllerHome {
         public String greeting() {
             return "greeting";
         }
-        
+        */
         /*
 	@Value("${application.message:Hello World}")
 	private String message = "Hello World";

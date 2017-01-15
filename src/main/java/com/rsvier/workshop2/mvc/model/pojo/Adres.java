@@ -50,7 +50,7 @@ public class Adres implements java.io.Serializable {
      @Id @GeneratedValue(strategy=IDENTITY)
 
     
-    @Column(name="idAdres", unique=true, nullable=false)
+    @Column(name="id_adres", unique=true, nullable=false)
     public Long getIdAdres() {
         return this.idAdres;
     }
@@ -60,7 +60,7 @@ public class Adres implements java.io.Serializable {
     }
 
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="adresType_idAdresType")
+    @JoinColumn(name="adrestype_id_adrestype")
     public Adrestype getAdrestype() {
         return this.adrestype;
     }

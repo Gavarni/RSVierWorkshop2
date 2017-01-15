@@ -26,19 +26,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class ControllerAccount {
     
     @Autowired
-    private final RepositoryAccount repositoryAccount;
+    private final ServiceAccount serviceAccount;
     
     
     // Moet autowired nou op de constructor of op het declareren hierboven van een repository om de data op te halen En kan het ook een void methode zijn.
     @Autowired
-    public ControllerAccount(RepositoryAccount repositoryAccount){
-        this.repositoryAccount = repositoryAccount;
+    public ControllerAccount(ServiceAccount serviceAccount){
+        this.serviceAccount = serviceAccount;
     }
-        
+    
     // List all Accounts.
     @RequestMapping(value = "/accounts", method=RequestMethod.GET)
     public String listAccounts(Model model) {
-        model.addAttribute("accounts", repositoryAccount.findAll());
+        model.addAttribute("accounts", serviceAccount.getAll());
         System.out.println("Returning accounts:");
         return "account/accounts";
     }
@@ -46,14 +46,14 @@ public class ControllerAccount {
     // Show an Account by its ID
     @RequestMapping(value = "account/{id}", method=RequestMethod.GET)
     public String showAccount(@PathVariable Long id, Model model) {
-        model.addAttribute("account", repositoryAccount.findOne(id));
+        model.addAttribute("account", serviceAccount.get(id));
         return "account/accountDetails";
     }
     
     // Edit an Account by its ID
     @RequestMapping("account/edit/{id}")
     public String edit(@PathVariable Long id, Model model) {
-        model.addAttribute("account", repositoryAccount.findOne(id));
+        model.addAttribute("account", serviceAccount.get(id));
         return "account/accountForm";
     }
 
@@ -67,14 +67,14 @@ public class ControllerAccount {
     // Save Account to DB
     @RequestMapping(value = "account", method = RequestMethod.POST)
     public String saveAccount(Account account) {
-        repositoryAccount.save(account);
+        serviceAccount.update(account);
         return "redirect:/account/" + account.getIdAccount();
     }
 
     // Delete product by id.
     @RequestMapping("account/delete/{id}")
     public String delete(@PathVariable Long id) {
-        repositoryAccount.delete(id);
+        serviceAccount.remove(id);
         return "redirect:/accounts";
     }
 

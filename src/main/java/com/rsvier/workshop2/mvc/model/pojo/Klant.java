@@ -48,7 +48,7 @@ public class Klant  implements java.io.Serializable {
     }
    
     @Id @GeneratedValue(strategy=IDENTITY)
-    @Column(name="idKlant", unique=true, nullable=false)
+    @Column(name="id_klant", unique=true, nullable=false)
     public Long getIdKlant() {
         return this.idKlant;
     }
@@ -58,7 +58,7 @@ public class Klant  implements java.io.Serializable {
     }
 
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="account_idAccount")
+    @JoinColumn(name="account_id_account")
     public Account getAccount() {
         return this.account;
     }

@@ -1,13 +1,147 @@
-<!DOCTYPE html>
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
-<html>
-    <head lang="en">
-        <title>Spring Boot Exemple</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8">
-        <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<!-- START: Web App Head  -->
+	<head>
+            <title>Homepage KaaS</title>
+            <th:block th:include="meta-data/head :: head"></th:block>
+	</head>	
+	<!-- END: Web App Head  -->
+        
+        <!-- START: Web App Body  -->
+	<body>
+            
+            <div th:include="layout/header :: .container-header"></div>
+            
+               
+            
+		<div class="frontpageslider">
+				
+		</div>
+                
+            <div class="container-main">
+			
+			<div class="promo-products">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<h1>Acties van de week <small>onze specialiteiten</small></h1>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="promo-product-container">
+							<img class="img-responsive" src="img/promo/01.jpg"/>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="promo-product-container">
+							<img class="img-responsive" src="img/promo/02.jpg"/>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="promo-product-container">
+							<img class="img-responsive" src="img/promo/03.jpg"/>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="promo-product-container">
+							<img class="img-responsive" src="img/promo/04.jpg"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="image-divider">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="homepage-image-row">
+							<div class="left-block-image">
+								<img class="img-responsive" src="img/promo/05.jpg"/>
+							</div>
+							<div class="right-block-image">
+								<img class="img-responsive" src="img/promo/06.jpg"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="testimonals">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3">
+						</div>
+						<div class="col-lg-6">
+							<div class="">
+							<div class="page-header">
+								<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+								sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+								<br/><small>John Doe</small></h1>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="partners">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-1">
+							<img class="img-responsive" src="/img/partners/01.jpg"/>
+						</div>
+						<div class="col-lg-1">
+							<img class="img-responsive" src="/img/partners/02.png"/>
+						</div>
+						<div class="col-lg-1">
+							<img class="img-responsive" src="/img/partners/03.png"/>
+						</div>
+						<div class="col-lg-1">
+							<img class="img-responsive" src="/img/partners/04.png"/>
+						</div>
+						<div class="col-lg-1">
+							<img class="img-responsive" src="/img/partners/05.jpg"/>
+						</div>
+						<div class="col-lg-1">
+							<img class="img-responsive" src="/img/partners/06.jpg"/>
+						</div>
+						<div class="col-lg-1">
+							<img class="img-responsive" src="/img/partners/07.png"/>
+						</div>
+						<div class="col-lg-1">
+							<img class="img-responsive" src="/img/partners/08.png"/>
+						</div>
+						<div class="col-lg-1">
+							<img class="img-responsive" src="/img/partners/09.jpg"/>
+						</div>
+						<div class="col-lg-1">
+							<img class="img-responsive" src="/img/partners/10.png"/>
+						</div>
+						<div class="col-lg-1">
+							<img class="img-responsive" src="/img/partners/11.png"/>
+						</div>
+						<div class="col-lg-1">
+							<img class="img-responsive" src="/img/partners/12.png"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+            
+            
+            <!--<div data-th-replace="layout/header :: container-header">...</div>-->
+            
+            <div th:include="layout/footer :: .container-footer"></div>
+            
+	</body>
+        <!-- END Web App Body  -->
+        
+	
 </html>
+
+

@@ -43,8 +43,8 @@ public class BestellingHasArtikel  implements java.io.Serializable {
 
     
     @AttributeOverrides( {
-        @AttributeOverride(name="bestellingIdBestelling", column=@Column(name="bestelling_idBestelling") ), 
-        @AttributeOverride(name="artikelIdArtikel", column=@Column(name="artikel_idArtikel") ), 
+        @AttributeOverride(name="bestellingIdBestelling", column=@Column(name="bestelling_id_bestelling") ), 
+        @AttributeOverride(name="artikelIdArtikel", column=@Column(name="artikel_id_artikel") ), 
         @AttributeOverride(name="aantal", column=@Column(name="aantal") ) } )
     public BestellingHasArtikelId getId() {
         return this.id;
@@ -55,7 +55,7 @@ public class BestellingHasArtikel  implements java.io.Serializable {
     }
 
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="artikel_idArtikel", insertable=false, updatable=false)
+    @JoinColumn(name="artikel_id_artikel", insertable=false, updatable=false)
     public Artikel getArtikel() {
         return this.artikel;
     }
@@ -65,7 +65,7 @@ public class BestellingHasArtikel  implements java.io.Serializable {
     }
 
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="bestelling_idBestelling", insertable=false, updatable=false)
+    @JoinColumn(name="bestelling_id_bestelling", insertable=false, updatable=false)
     public Bestelling getBestelling() {
         return this.bestelling;
     }
